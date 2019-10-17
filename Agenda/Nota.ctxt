@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Nota
+comment1.params=titulo
+comment1.target=Nota(java.lang.String)
+comment2.params=titulo
+comment2.target=void\ setTitulo(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getTitulo()
+comment4.params=
+comment4.target=java.io.File\ getCuerpo()
+comment5.params=
+comment5.target=java.lang.String\ getFecha()
+numComments=6
