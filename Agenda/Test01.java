@@ -7,19 +7,20 @@ public class Test01
         Nota n1 = new Nota("Notas 1");
         Nota n2 = new Nota("Notas 2");
         Nota n3 = new Nota("Notas 3");
-        EscribirTexto(n1);
-        EscribirTexto(n2);
-        EscribirTexto(n3);
-        MostrarTodoArchivo(n1);
-        MostrarTodoArchivo(n2);
-        MostrarTodoArchivo(n3);
+        Test01 t = new Test01();
+        t.EscribirTexto(n1);
+        t.EscribirTexto(n2);
+        t.EscribirTexto(n3);
+        t.MostrarTodoArchivo(n1);
+        t.MostrarTodoArchivo(n2);
+        t.MostrarTodoArchivo(n3);
         Nota [] n = {n1,n2,n3};
         StdOut.println("Buscando en las notas la palabra hola");
-        Buscar(n,"hola");
+        t.Buscar(n,"hola");
     }
     
     
-    public static void Buscar(Nota[] n,String buscar)throws IOException{        
+    public void Buscar(Nota[] n,String buscar)throws IOException{        
             for(int i = 0; i < n.length; i++){
                 if(BusCuerpo(n[i], buscar) || n[i].getTitulo().toUpperCase().contains(buscar.toUpperCase()))
                 StdOut.println(n[i].getTitulo());
@@ -27,7 +28,7 @@ public class Test01
         } 
     
     
-    public static boolean BusCuerpo(Nota n, String buscar) throws IOException {
+    public boolean BusCuerpo(Nota n, String buscar) throws IOException {
       if(!n.getCuerpo().canExecute())
          return false;
       FileReader fr = new FileReader(n.getCuerpo().getName());
@@ -39,7 +40,7 @@ public class Test01
     }
     
     
-    public static void EscribirTexto(Nota n)throws IOException{ 
+    public void EscribirTexto(Nota n)throws IOException{ 
         if(!n.getCuerpo().exists())
         n.getCuerpo().createNewFile();
         Scanner leer = new Scanner(System.in);
@@ -54,7 +55,7 @@ public class Test01
         }catch(Exception e){}
     }
     
-    public static void MostrarTodoArchivo(Nota n){
+    public void MostrarTodoArchivo(Nota n){
         StdOut.println("El archivo " + n.getTitulo() + " creado el "+ n.getFecha() + " contiene de cuerpo");
         try{
             FileReader fr = new FileReader(n.getCuerpo().getName());
@@ -64,7 +65,7 @@ public class Test01
         }catch(Exception e){}
     }
     
-    public static int ContarLineas(Nota n){
+    public int ContarLineas(Nota n){
         byte Total_Lineas = 0;        
         try{
             FileReader fr = new FileReader(n.getCuerpo().getName());
