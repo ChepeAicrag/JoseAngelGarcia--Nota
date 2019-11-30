@@ -1,8 +1,16 @@
-
+/**
+ * Clase utilizada como cliente para probar diferentes métodos
+ * @author Garcia Garcia Jose Angel
+ * @version 30/11/2019
+   */
 import java.io.*;
 import java.util.*;
 public class Test01
 {
+    /**
+     * Método principal para probar a los demás métodos 
+     * @@throws IOException
+       */
     public static void main()throws IOException{
         Nota n1 = new Nota("Notas 1");
         Nota n2 = new Nota("Notas 2");
@@ -19,15 +27,26 @@ public class Test01
         t.Buscar(n,"hola");
     }
     
-    
+    /**
+     * Método para buscar una nota por titulo  
+     * @param n Arreglo que contiene a la(s) nota(s)
+     * @param buscar Titulo a buscar en el arreglo de nota(s)
+     * @throw IOException 
+       */
     public void Buscar(Nota[] n,String buscar)throws IOException{        
             for(int i = 0; i < n.length; i++){
                 if(BusCuerpo(n[i], buscar) || n[i].getTitulo().toUpperCase().contains(buscar.toUpperCase()))
                 StdOut.println(n[i].getTitulo());
             }
         } 
-    
-    
+        
+    /**
+     * Método para buscar una palabra en el cuerpo de la nota
+     * @param n Nota en la que se busca
+     * @param buscar Palabra que se busca en el cuerpo de la nota
+     * @throws IOExpcetion
+     * @return true si está la palabra y false de lo contrario
+       */
     public boolean BusCuerpo(Nota n, String buscar) throws IOException {
       if(!n.getCuerpo().canExecute())
          return false;
@@ -39,7 +58,11 @@ public class Test01
      return false;       
     }
     
-    
+    /**
+     * Método para escribir texto en una nota
+     * @param n Nota en la que se escribirá
+     * @throws IOException
+       */
     public void EscribirTexto(Nota n)throws IOException{ 
         if(!n.getCuerpo().exists())
         n.getCuerpo().createNewFile();
@@ -55,6 +78,11 @@ public class Test01
         }catch(Exception e){}
     }
     
+    /**
+     * Método para mostrar texto contenido en una nota
+     * @param n Nota de la cual se mostrara su cuerpo
+     * @throws IOException
+       */
     public void MostrarTodoArchivo(Nota n){
         StdOut.println("El archivo " + n.getTitulo() + " creado el "+ n.getFecha() + " contiene de cuerpo");
         try{
@@ -65,6 +93,11 @@ public class Test01
         }catch(Exception e){}
     }
     
+    /**
+     * Método para contar las lineas que contiene el cuerpo de la nota
+     * @peram n Nota a la que le cuenta las lineas de texto
+     * @return El numero de lineas que contiene la nota en su cuerpo
+       */
     public int ContarLineas(Nota n){
         byte Total_Lineas = 0;        
         try{

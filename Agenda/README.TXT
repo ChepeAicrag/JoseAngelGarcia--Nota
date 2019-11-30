@@ -1,12 +1,12 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+TÍTULO DEL PROYECTO: Nota
+PROPÓSITO DEL PROYECTO: Crear métodos con una Nota 
+VERSIÓN o FECHA: 30/11/2019
+CÓMO INICIAR ESTE PROYECTO: Ejecutar la clase Test01
+AUTORES: García García José Ángel 18161117
+INSTRUCCIONES PARA EL USUARIO:
+Para prueba del programa, debes ejecutar el método main de la clase Test01. 
+La clase Nota muestra los atributos que se requieren para su construcción. 
+En la clase Test01 puedes ver los métodos que se pueden realizar utilizando a una Nota como parametro.
